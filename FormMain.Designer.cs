@@ -171,13 +171,13 @@
             this.listBoxTickets.ItemHeight = 16;
             this.listBoxTickets.Location = new System.Drawing.Point(415, 318);
             this.listBoxTickets.Name = "listBoxTickets";
-            this.listBoxTickets.Size = new System.Drawing.Size(329, 84);
+            this.listBoxTickets.Size = new System.Drawing.Size(500, 84);
             this.listBoxTickets.TabIndex = 12;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(790, 318);
+            this.button1.Location = new System.Drawing.Point(953, 318);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 42);
             this.button1.TabIndex = 13;

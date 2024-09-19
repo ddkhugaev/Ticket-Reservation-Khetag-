@@ -50,7 +50,6 @@ namespace Ticket_Reservation
 
         private void getTicket(string from, string to)
         {
-            Ticket ticket = null;
             using (StreamReader file = new StreamReader("data/plane flights.txt"))
             {
                 while (!file.EndOfStream)
@@ -58,11 +57,16 @@ namespace Ticket_Reservation
                     string str = file.ReadLine();
                     if (str.Contains(from + "~" + to))
                     {
-                        string[] ticketInfo = file.ReadLine().Split('$');
-                        string date = ticketInfo[0];
-                        decimal cost = Convert.ToDecimal(ticketInfo[1]);
-                        ticket = new Ticket(from, to, date, cost);
-                        listBoxTickets.Items.Add(ticket);
+                        string ticketInfo = file.ReadLine();
+                        while (ticketInfo.Contains('$'))
+                        {
+                            string[] data = ticketInfo.Split('$');
+                            string date = data[0];
+                            decimal cost = Convert.ToDecimal(data[1]);
+                            AddTicketToListBox(from, to, date, cost);
+
+                            ticketInfo = file.ReadLine();
+                        }
                     }
                 }
             }
@@ -73,5 +77,12 @@ namespace Ticket_Reservation
             FormAdim formAdim = new FormAdim();
             formAdim.Show();
         }
+
+        private void AddTicketToListBox(string from, string to, string date, decimal cost)
+        {
+            Ticket ticket = new Ticket(from, to, date, cost);
+            listBoxTickets.Items.Add(ticket);
+        }
+
     }
 }
