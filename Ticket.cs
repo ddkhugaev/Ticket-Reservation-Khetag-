@@ -9,11 +9,13 @@ namespace Ticket_Reservation
     // Класс билета
     public class Ticket
     {
-        public Ticket(string firtstTown, string secondTown, string date)
+        public Ticket() { }
+        public Ticket(string firtstTown, string secondTown, string date, decimal cost)
         {
             FirtstTown = firtstTown;
             SecondTown = secondTown;
             Date = date;
+            Cost = cost;
         }
 
         public string FirtstTown { get; set; }
@@ -21,5 +23,10 @@ namespace Ticket_Reservation
         public string Date { get; set; }
         public decimal Cost { get; set; }
         public int Seat { get; set; }
+
+        public override string ToString()
+        {
+            return $"Рейс: {FirtstTown}-{SecondTown}, дата: {Date}\nЦена: {Cost}руб.";
+        }
     }
 }

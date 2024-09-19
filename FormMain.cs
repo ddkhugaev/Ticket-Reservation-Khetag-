@@ -17,8 +17,8 @@ namespace Ticket_Reservation
         public FormMain()
         {
             InitializeComponent();
-
             StreamReader sr = new StreamReader("data/plane flights.txt");
+
             while (!sr.EndOfStream)
             {
                 string s = sr.ReadLine();
@@ -35,14 +35,43 @@ namespace Ticket_Reservation
                     }
                 }
             }
+            sr.Close();
+
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string townFirst = comboBoxFrom.Text;
             string townSecond = comboBoxTo.Text;
-            string dateTime = dateTimePicker1.Text;
-            
+            //string dateTime = dateTimePicker1.Text;
+            getTicket(townFirst, townSecond);
+
+        }
+
+        private void getTicket(string from, string to)
+        {
+            Ticket ticket = null;
+            using (StreamReader file = new StreamReader("data/plane flights.txt"))
+            {
+                while (!file.EndOfStream)
+                {
+                    string str = file.ReadLine();
+                    if (str.Contains(from + "~" + to))
+                    {
+                        string[] ticketInfo = file.ReadLine().Split('$');
+                        string date = ticketInfo[0];
+                        decimal cost = Convert.ToDecimal(ticketInfo[1]);
+                        ticket = new Ticket(from, to, date, cost);
+                        listBoxTickets.Items.Add(ticket);
+                    }
+                }
+            }
+        }
+
+        private void администраторToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdim formAdim = new FormAdim();
+            formAdim.Show();
         }
     }
 }
