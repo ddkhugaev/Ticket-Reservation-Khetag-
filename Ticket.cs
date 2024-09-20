@@ -26,7 +26,7 @@ namespace Ticket_Reservation
 
         public override string ToString()
         {
-            return $"Рейс: {FirtstTown}-{SecondTown}, дата: {Date}\nЦена: {Cost}руб.";
+            return $"Рейс: {FirtstTown}-{SecondTown}, дата: {Date} Цена: {Cost}руб.";
         }
     }
 }

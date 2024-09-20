@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 
 namespace Ticket_Reservation
@@ -131,6 +132,21 @@ namespace Ticket_Reservation
             }
         }
 
-        
+        private void buttonPay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Оплата пока на работает :(");
+        }
+
+        private void buttonAddToBasket_Click(object sender, EventArgs e)
+        {
+            string purchasedTickets = listBoxTickets.SelectedItem.ToString();
+            listBoxBasket.Items.Add(purchasedTickets);
+        }
+
+        private void buttonRemoveFromBasket_Click(object sender, EventArgs e)
+        {
+            var selectedItem = listBoxBasket.SelectedItem;
+            listBoxBasket.Items.Remove(selectedItem);
+        }
     }
 }
