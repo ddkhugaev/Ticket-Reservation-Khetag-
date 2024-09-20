@@ -44,18 +44,21 @@ namespace Ticket_Reservation
             string townFirst = comboBoxFrom.Text;
             string townSecond = comboBoxTo.Text;
             //string dateTime = dateTimePicker1.Text;
-            getTicket(townFirst, townSecond);
+            if (townIsNullOrEmty(townFirst, townSecond))
+                MessageBox.Show("Заполните поля ввода городом\nпрежде чем перейти к покупкам!", "Error!");
+            else
+                getTicketFromFIle(townFirst, townSecond);
 
         }
 
-        private void getTicket(string from, string to)
+        private void getTicketFromFIle(string townFrom, string townTo)
         {
             using (StreamReader file = new StreamReader("data/plane flights.txt"))
             {
                 while (!file.EndOfStream)
                 {
                     string str = file.ReadLine();
-                    if (str.Contains(from + "~" + to))
+                    if (str.Contains(townFrom + "~" + townTo))
                     {
                         string ticketInfo = file.ReadLine();
                         while (ticketInfo.Contains('$'))
@@ -63,13 +66,14 @@ namespace Ticket_Reservation
                             string[] data = ticketInfo.Split('$');
                             string date = data[0];
                             decimal cost = Convert.ToDecimal(data[1]);
-                            AddTicketToListBox(from, to, date, cost);
+                            AddTicketToListBox(townFrom, townTo, date, cost);
 
                             ticketInfo = file.ReadLine();
                         }
                     }
                 }
             }
+            if (listBoxTickets.Items.Count == 0) MessageBox.Show($"На данный момент нет билетов из {townFrom}, в {townTo}!");
         }
 
         private void администраторToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +86,11 @@ namespace Ticket_Reservation
         {
             Ticket ticket = new Ticket(from, to, date, cost);
             listBoxTickets.Items.Add(ticket);
+        }
+
+        private bool townIsNullOrEmty(string town1, string town2)
+        {
+            return string.IsNullOrEmpty(town1) || string.IsNullOrEmpty(town2);
         }
 
     }

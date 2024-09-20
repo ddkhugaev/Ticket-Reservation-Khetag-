@@ -48,7 +48,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(633, 154);
+            this.dateTimePicker1.Location = new System.Drawing.Point(705, 161);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(170, 22);
             this.dateTimePicker1.TabIndex = 2;
@@ -56,7 +56,7 @@
             // buttonSearch
             // 
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearch.Location = new System.Drawing.Point(460, 225);
+            this.buttonSearch.Location = new System.Drawing.Point(532, 232);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(161, 42);
             this.buttonSearch.TabIndex = 4;
@@ -68,7 +68,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(264, 116);
+            this.label1.Location = new System.Drawing.Point(336, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 29);
             this.label1.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(455, 116);
+            this.label2.Location = new System.Drawing.Point(527, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 29);
             this.label2.TabIndex = 4;
@@ -90,7 +90,7 @@
             this.comboBoxFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFrom.FormattingEnabled = true;
-            this.comboBoxFrom.Location = new System.Drawing.Point(264, 148);
+            this.comboBoxFrom.Location = new System.Drawing.Point(336, 155);
             this.comboBoxFrom.Name = "comboBoxFrom";
             this.comboBoxFrom.Size = new System.Drawing.Size(154, 28);
             this.comboBoxFrom.TabIndex = 0;
@@ -101,7 +101,7 @@
             this.comboBoxTo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxTo.FormattingEnabled = true;
-            this.comboBoxTo.Location = new System.Drawing.Point(460, 148);
+            this.comboBoxTo.Location = new System.Drawing.Point(532, 155);
             this.comboBoxTo.Name = "comboBoxTo";
             this.comboBoxTo.Size = new System.Drawing.Size(154, 28);
             this.comboBoxTo.TabIndex = 1;
@@ -110,7 +110,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(628, 116);
+            this.label3.Location = new System.Drawing.Point(700, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 29);
             this.label3.TabIndex = 5;
@@ -120,7 +120,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(328, 32);
+            this.label5.Location = new System.Drawing.Point(400, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(405, 32);
             this.label5.TabIndex = 8;
@@ -130,11 +130,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(163, 318);
+            this.label4.Location = new System.Drawing.Point(13, 327);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(218, 29);
+            this.label4.Size = new System.Drawing.Size(272, 58);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Результат поиска:";
+            this.label4.Text = "Билеты на ближайшее\r\nвремя:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStrip1
             // 
@@ -169,9 +170,9 @@
             // 
             this.listBoxTickets.FormattingEnabled = true;
             this.listBoxTickets.ItemHeight = 16;
-            this.listBoxTickets.Location = new System.Drawing.Point(415, 318);
+            this.listBoxTickets.Location = new System.Drawing.Point(291, 318);
             this.listBoxTickets.Name = "listBoxTickets";
-            this.listBoxTickets.Size = new System.Drawing.Size(500, 84);
+            this.listBoxTickets.Size = new System.Drawing.Size(656, 84);
             this.listBoxTickets.TabIndex = 12;
             // 
             // button1
