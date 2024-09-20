@@ -17,26 +17,43 @@ namespace Ticket_Reservation
         public FormMain()
         {
             InitializeComponent();
-            StreamReader sr = new StreamReader("data/plane flights.txt");
+            FillComboBox();
+            FillHistoryInListBox();
+        }
 
-            while (!sr.EndOfStream)
+        private void FillComboBox()
+        {
+            using (StreamReader file = new StreamReader("data/plane flights.txt"))
             {
-                string s = sr.ReadLine();
-                if (s.Contains('~'))
+                while (!file.EndOfStream)
                 {
-                    string[] input = s.Split('~');
-                    if (!comboBoxFrom.Items.Contains(input[0]))
+                    string s = file.ReadLine();
+                    if (s.Contains('~'))
                     {
-                        comboBoxFrom.Items.Add(input[0]);
-                    }
-                    if (!comboBoxTo.Items.Contains(input[1]))
-                    {
-                        comboBoxTo.Items.Add(input[1]);
+                        string[] input = s.Split('~');
+                        if (!comboBoxFrom.Items.Contains(input[0]))
+                        {
+                            comboBoxFrom.Items.Add(input[0]);
+                        }
+                        if (!comboBoxTo.Items.Contains(input[1]))
+                        {
+                            comboBoxTo.Items.Add(input[1]);
+                        }
                     }
                 }
             }
-            sr.Close();
+        }
 
+        private void FillHistoryInListBox()
+        {
+            using (StreamReader file = new StreamReader("data/search history.txt"))
+            {
+                while (!file.EndOfStream)
+                {
+                    string s = file.ReadLine();
+                    listBoxTickets.Items.Add(s);
+                }
+            }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -97,5 +114,23 @@ namespace Ticket_Reservation
         {
             listBoxTickets.Items.Clear();
         }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            writeSearchHistoryToFile("data/search history.txt");
+        }
+
+        private void writeSearchHistoryToFile(string fileName)
+        {
+            using (StreamWriter file = new StreamWriter(fileName))
+            {
+                foreach (var item in listBoxTickets.Items)
+                {
+                    file.WriteLine(item);
+                }
+            }
+        }
+
+        
     }
 }

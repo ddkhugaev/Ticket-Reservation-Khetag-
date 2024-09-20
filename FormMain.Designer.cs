@@ -132,7 +132,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(13, 327);
+            this.label4.Location = new System.Drawing.Point(38, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(272, 58);
             this.label4.TabIndex = 10;
@@ -164,7 +164,7 @@
             // администраторToolStripMenuItem
             // 
             this.администраторToolStripMenuItem.Name = "администраторToolStripMenuItem";
-            this.администраторToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.администраторToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.администраторToolStripMenuItem.Text = "Администратор";
             this.администраторToolStripMenuItem.Click += new System.EventHandler(this.администраторToolStripMenuItem_Click);
             // 
@@ -172,7 +172,7 @@
             // 
             this.listBoxTickets.FormattingEnabled = true;
             this.listBoxTickets.ItemHeight = 16;
-            this.listBoxTickets.Location = new System.Drawing.Point(291, 318);
+            this.listBoxTickets.Location = new System.Drawing.Point(316, 366);
             this.listBoxTickets.Name = "listBoxTickets";
             this.listBoxTickets.Size = new System.Drawing.Size(656, 84);
             this.listBoxTickets.TabIndex = 12;
@@ -181,7 +181,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Info;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(953, 318);
+            this.button1.Location = new System.Drawing.Point(978, 366);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(215, 42);
             this.button1.TabIndex = 13;
@@ -192,7 +192,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Salmon;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(953, 360);
+            this.button2.Location = new System.Drawing.Point(978, 408);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(215, 42);
             this.button2.TabIndex = 14;
@@ -204,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 450);
+            this.ClientSize = new System.Drawing.Size(1243, 566);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBoxTickets);
@@ -220,6 +220,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "FormMain";
             this.Text = "Билетики";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
