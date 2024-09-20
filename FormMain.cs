@@ -93,5 +93,9 @@ namespace Ticket_Reservation
             return string.IsNullOrEmpty(town1) || string.IsNullOrEmpty(town2);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBoxTickets.Items.Clear();
+        }
     }
 }
