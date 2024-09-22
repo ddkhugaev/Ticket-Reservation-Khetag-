@@ -71,6 +71,7 @@ namespace Ticket_Reservation
 
         private void getTicketFromFIle(string townFrom, string townTo)
         {
+            bool flag = true;
             using (StreamReader file = new StreamReader("data/plane flights.txt"))
             {
                 while (!file.EndOfStream)
@@ -79,6 +80,9 @@ namespace Ticket_Reservation
                     if (str.Contains(townFrom + "~" + townTo))
                     {
                         string ticketInfo = file.ReadLine();
+
+                        if (ticketInfo.Contains('$')) flag = false;
+
                         while (ticketInfo.Contains('$'))
                         {
                             string[] data = ticketInfo.Split('$');
@@ -91,7 +95,7 @@ namespace Ticket_Reservation
                     }
                 }
             }
-            if (listBoxTickets.Items.Count == 0) MessageBox.Show($"На данный момент нет билетов из {townFrom}, в {townTo}!");
+            if (flag) MessageBox.Show($"На данный момент нет билетов из {townFrom}, в {townTo}!");
         }
 
         private void администраторToolStripMenuItem_Click(object sender, EventArgs e)
